@@ -17,6 +17,7 @@ class LoginPage(Base):
     user_name = "//input[@data-test='username']"
     password = "#password"
     login_button = "//input[@value='Login']"
+    main_word = "//span[@class='title']"
     # login_standard_user = "standard_user"
     # password_all = "secret_sauce"
 
@@ -30,6 +31,9 @@ class LoginPage(Base):
 
     def get_login_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.login_button)))
+
+    def get_main_word(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.main_word)))
 
     # Actions
 
@@ -54,6 +58,7 @@ class LoginPage(Base):
         self.input_user_name("standard_user")
         self.input_password("secret_sauce")
         self.click_login_button()
+        self.assert_word(self.get_main_word(), "Products")
 
 
 

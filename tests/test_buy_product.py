@@ -1,6 +1,8 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+
+from pages.cart_page import CartPage
 from pages.login_page import  LoginPage
 from pages.main_page import MainPage
 
@@ -21,6 +23,8 @@ def test_buy_product():
     login.authorization()
     mp = MainPage(driver)
     mp.select_product()
+    cp = CartPage(driver)
+    cp.product_confirmation()
 
 
 

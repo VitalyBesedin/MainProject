@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import  LoginPage
+from pages.main_page import MainPage
 
 
 def test_buy_product():
@@ -14,17 +15,16 @@ def test_buy_product():
     # driver = webdriver.Chrome(options=options, service=g)  # this is and above macOS
     # driver = webdriver.Chrome()  # Windows
     # driver = webdriver.Firefox()
-    driver = webdriver.Safari()
-    # driver = webdriver.Edge()
+    # driver = webdriver.Safari()
+    driver = webdriver.Edge()
 
     print("Start test")
 
     login = LoginPage(driver)
     login.authorization()
+    mp = MainPage(driver)
+    mp.select_product()
 
-    enter_shopping_cart = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#shopping_cart_container")))
-    enter_shopping_cart.click()
-    print("Click Enter Shopping Cart")
 
 
     time.sleep(5)

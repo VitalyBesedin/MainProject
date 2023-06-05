@@ -18,10 +18,3 @@ class Base:
         assert value_word == result
         print("Good value word")
 
-
-
-# text_products = driver.find_element(By.XPATH, "//span[@class='title']")
-# value_text_products = text_products.text
-# print(value_text_products)
-# assert value_text_products == "Products"
-# print("GOOD")

@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import  LoginPage
 
 
-def test_select_product():
+def test_buy_product():
     # options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
     # g = Service()

@@ -16,8 +16,8 @@ def test_buy_product():
     # driver = webdriver.Chrome(options=options, service=g)  # this is and above macOS
     # driver = webdriver.Chrome()  # Windows
     # driver = webdriver.Firefox()
-    # driver = webdriver.Safari()
-    driver = webdriver.Edge()
+    driver = webdriver.Safari()
+    # driver = webdriver.Edge()
 
     print("Start test")
 

@@ -21,7 +21,7 @@ class Base:
         print("Good value word")
 
     """Method ScreenShot"""
-    def screenshot(self):
+    def get_screenshot(self):
         time.sleep(3)
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         name_screenshot = 'screenshot' + now_date + '.png'

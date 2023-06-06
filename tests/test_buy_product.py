@@ -6,6 +6,7 @@ from pages.cart_page import CartPage
 from pages.client_information_page import ClientInformationPage
 from pages.login_page import  LoginPage
 from pages.main_page import MainPage
+from pages.payment_page import PaymentPage
 
 
 def test_buy_product():
@@ -28,8 +29,7 @@ def test_buy_product():
     cp.product_confirmation()
     cip = ClientInformationPage(driver)
     cip.client_confirmation()
-
-
+    pp = PaymentPage(driver)
+    pp.payment()
 
     time.sleep(5)
-

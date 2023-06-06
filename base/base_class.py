@@ -22,8 +22,14 @@ class Base:
 
     """Method ScreenShot"""
     def get_screenshot(self):
-        time.sleep(3)
+        time.sleep(1)
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         name_screenshot = 'screenshot' + now_date + '.png'
         self.driver.save_screenshot('/Users/vitalybesedin/PycharmProjects/MainProject/screen/' + name_screenshot) # MacOS
 
+    """Method assert url"""
+
+    def assert_url(self, result):
+        get_url = self.driver.current_url
+        assert get_url == result
+        print("Good value url")

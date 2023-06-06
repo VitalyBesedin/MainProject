@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 from pages.cart_page import CartPage
+from pages.client_information_page import ClientInformationPage
 from pages.login_page import  LoginPage
 from pages.main_page import MainPage
 
@@ -25,6 +26,8 @@ def test_buy_product():
     mp.select_product()
     cp = CartPage(driver)
     cp.product_confirmation()
+    cip = ClientInformationPage(driver)
+    cip.client_confirmation()
 
 
 

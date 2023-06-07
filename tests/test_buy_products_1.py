@@ -12,7 +12,7 @@ from pages.main_page import MainPage
 from pages.payment_page import PaymentPage
 
 # @pytest.mark.run(order=3)
-def test_buy_product_1(set_up):
+def test_buy_product_1(set_up, set_group):
     # options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
     # g = Service()
@@ -49,7 +49,7 @@ def test_buy_product_1(set_up):
     driver.quit()
 
 # @pytest.mark.run(order=1)
-def test_buy_product_2(set_up):
+def test_buy_product_2(set_up, set_group):
     # options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
     # g = Service()
@@ -77,7 +77,7 @@ def test_buy_product_2(set_up):
     driver.quit()
 
 # @pytest.mark.run(order=2)
-def test_buy_product_3():
+def test_buy_product_3(set_up, set_group):
     # options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
     # g = Service()

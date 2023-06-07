@@ -61,6 +61,7 @@ class MainPage(Base):
         self.click_main_menu()
         self.click_menu_item_about()
         self.assert_url("https://saucelabs.com/")
+        self.get_screenshot()
 
 
 

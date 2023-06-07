@@ -17,8 +17,8 @@ def test_link_about():
     # driver = webdriver.Chrome(options=options, service=g)  # this is and above macOS
     # driver = webdriver.Chrome()  # Windows
     # driver = webdriver.Firefox()
-    driver = webdriver.Safari()
-    # driver = webdriver.Edge()
+    # driver = webdriver.Safari()
+    driver = webdriver.Edge()
 
     print("Start test")
 
@@ -29,4 +29,6 @@ def test_link_about():
     mp.select_main_menu_about()
 
 
-    time.sleep(20)
+    print("Finish Test")
+    time.sleep(10)
+    driver.quit()

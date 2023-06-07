@@ -15,6 +15,8 @@ class MainPage(Base):
     # Locators
     select_product_1 = "#add-to-cart-sauce-labs-backpack"
     cart = "//span[@class='shopping_cart_badge']"
+    main_menu = "#react-burger-menu-btn"
+    menu_item_about = "#about_sidebar_link"
 
 
     # Getters
@@ -23,6 +25,10 @@ class MainPage(Base):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.select_product_1)))
     def get_cart(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.cart)))
+    def get_main_menu(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.main_menu)))
+    def get_menu_item_about(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.menu_item_about)))
 
 
     def click_product(self):
@@ -33,6 +39,14 @@ class MainPage(Base):
         self.get_cart().click()
         print("Click cart")
 
+    def click_main_menu(self):
+        self.get_main_menu().click()
+        print("Click main menu")
+
+    def click_menu_item_about(self):
+        self.get_menu_item_about().click()
+        print("Click main menu item About")
+
 
 
     # Methods
@@ -41,6 +55,12 @@ class MainPage(Base):
         self.get_current_url()
         self.click_product()
         self.click_cart()
+
+    def select_main_menu_about(self):
+        self.get_current_url()
+        self.click_main_menu()
+        self.click_menu_item_about()
+        self.assert_url("https://saucelabs.com/")
 
 
 
